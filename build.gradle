@@ -4,8 +4,10 @@ plugins {
 
 apply plugin: 'maven-publish' // for uploading to a maven repo
 
-sourceCompatibility = JavaVersion.VERSION_21
-targetCompatibility = JavaVersion.VERSION_21
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
 
 repositories {
     mavenLocal()
@@ -14,7 +16,11 @@ repositories {
     maven { name="EMI"; url="https://maven.terraformersmc.com/" }
 }
 
-archivesBaseName = "SimplePipes"
+
+base {
+    archivesName = "SimplePipes"
+}
+
 version = "0.13.2"
 
 loom {
